@@ -8,8 +8,17 @@
 
 #import "ViewController.h"
 
+// Define Unit Two function
+double convertUnitOneToUnitTwo(double unitOneValue) {
+    double unitTwoValue;
+    unitTwoValue = 10 * unitOneValue + 2;
+    return unitTwoValue;
+}
+
+
 @interface ViewController ()
 
+// Declare Variables, Properties
 @property (weak, nonatomic) IBOutlet UITextField *inputField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentController;
 @property (weak, nonatomic) IBOutlet UILabel *outputFiield;
@@ -20,8 +29,21 @@
 
 @implementation ViewController
 - (IBAction)updateButton:(id)sender {
+
+    // Declare variables
     NSMutableString *buf = [NSMutableString new];
-    [buf appendString: @"Clicked"];
+    double userInput = [self.inputField.text doubleValue];
+    
+    // Write a conversion function
+    if (self.segmentController.selectedSegmentIndex == 0) {
+        double unitTwoValue = convertUnitOneToUnitTwo(userInput);
+        [buf appendString: [@(unitTwoValue) stringValue]];
+    } else if (self.segmentController.selectedSegmentIndex == 1) {
+        [buf appendString:@"Unit Three"];
+    } else {
+        [buf appendString:@"Unit Four"];
+    }
+    
     self.outputFiield.text = buf;
     
 }
