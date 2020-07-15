@@ -70,6 +70,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cHQ-pW-FC1"/>
                     </view>
+                    <connections>
+                        <outlet property="inputField" destination="amy-7P-dl2" id="9Pc-EU-Cf1"/>
+                        <outlet property="outputFiield" destination="ePf-sQ-Vqc" id="AXn-z6-vJ1"/>
+                        <outlet property="segmentController" destination="IeL-El-H6B" id="w8B-SJ-5ev"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
