@@ -15,6 +15,12 @@ double convertUnitOneToUnitTwo(double unitOneValue) {
     return unitTwoValue;
 }
 
+// Define Unit Three function
+double convertUnitOneToUnitThree(double unitOneValue) {
+    double unitThreeValue;
+    unitThreeValue = 20 * unitOneValue + 4;
+    return unitThreeValue;
+}
 
 @interface ViewController ()
 
@@ -39,7 +45,8 @@ double convertUnitOneToUnitTwo(double unitOneValue) {
         double unitTwoValue = convertUnitOneToUnitTwo(userInput);
         [buf appendString: [@(unitTwoValue) stringValue]];
     } else if (self.segmentController.selectedSegmentIndex == 1) {
-        [buf appendString:@"Unit Three"];
+        double unitThreeValue = convertUnitOneToUnitThree(userInput);
+        [buf appendString:[@(unitThreeValue) stringValue]];
     } else {
         [buf appendString:@"Unit Four"];
     }
