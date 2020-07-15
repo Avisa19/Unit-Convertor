@@ -20,6 +20,9 @@
 
 @implementation ViewController
 - (IBAction)updateButton:(id)sender {
+    NSMutableString *buf = [NSMutableString new];
+    [buf appendString: @"Clicked"];
+    self.outputFiield.text = buf;
     
 }
 
