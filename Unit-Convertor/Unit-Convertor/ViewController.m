@@ -22,6 +22,13 @@ double convertUnitOneToUnitThree(double unitOneValue) {
     return unitThreeValue;
 }
 
+// Define Unit Four Function
+double convertUnitOneToUnitFour(double unitOneValue) {
+    double unitFourValue;
+    unitFourValue = 40 * unitOneValue + 8;
+    return unitFourValue;
+}
+
 @interface ViewController ()
 
 // Declare Variables, Properties
@@ -48,7 +55,8 @@ double convertUnitOneToUnitThree(double unitOneValue) {
         double unitThreeValue = convertUnitOneToUnitThree(userInput);
         [buf appendString:[@(unitThreeValue) stringValue]];
     } else {
-        [buf appendString:@"Unit Four"];
+        double unitFourValue = convertUnitOneToUnitFour(userInput);
+        [buf appendString:[@(unitFourValue) stringValue]];
     }
     
     self.outputFiield.text = buf;
